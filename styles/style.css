@@ -1,0 +1,310 @@
+:root {
+    --hero-btn-color: rgb(60,60,60);
+    --hero-btn-gradient: linear-gradient(0deg, rgba(60,60,60,1) 0%, rgba(93,93,93,1) 100%);
+    --hero-btn-gradient-hover: linear-gradient(0deg, rgba(70,70,70,1) 0%, rgba(103,103,103,1) 100%);
+
+    --hero-btn-border-radius: 1rem;
+
+    --section-header-bg-color: #574e4e;
+    --section-bg-color: #303030;
+
+    --link-color: #83a8bd;
+    --font-color: #f6e7de;
+
+    --display-font-family: "TF2 Build";
+    --secondary-display-font-family: "TF2 Secondary";
+
+    --normal-font-family: Inter, Arial, Helvetica, sans-serif;
+
+    --header-background-image: url(../img/borneo.jpg);
+
+    --poloroid-bg-color: #f6e7de;
+    --poloroid-font-color: #e6d9b4;
+    --poloroid-tape-color: #e6d9b4;
+}
+
+.gutter {
+    max-width: 1080px;
+    margin: 2rem auto;
+}
+
+.btn-hero {
+    font-family: var(--display-font-family);
+    font-size: 3rem;
+    padding: 2rem 4rem;
+    display: inline-block;
+    border-radius: var(--hero-btn-border-radius);
+    background-color: var(--hero-btn-color);
+    background-image: var(--hero-btn-gradient);
+    cursor: pointer;
+    transition: color 100ms, background-image 100ms;
+    color: inherit;
+    text-decoration: none;
+}
+.btn-hero:hover {
+    color:#fff;
+    background-image: var(--hero-btn-gradient-hover);
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #1e1c1c;
+    background-size: 512px 512px;
+    background-repeat: repeat;
+    color: var(--font-color);
+    background-image: linear-gradient(0deg, rgba(30,28,28,1) 0%,rgba(30,28,28,0.5) 25%, rgba(255,255,255,0) 100%), url(../img/borneo.jpg);
+    background-size: 1920px 1080px;
+    background-attachment: scroll;
+    background-repeat: no-repeat, no-repeat;
+    background-position-y: -512px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 10px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    
+}
+
+header {
+    padding: 10rem 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 8rem;
+    font-family: var(--display-font-family);
+    margin:2rem 0;
+    text-shadow: 0rem 0rem 2rem rgba(0,0,0,1);
+}
+
+header summary {
+    font-size: 1.3rem;
+    text-align: left;
+    text-shadow: 2px 2px 0.25rem rgba(0,0,0,1);
+    max-width: 1080px;
+    margin: 0px auto;
+    line-height: 1.5rem;
+}
+
+header a.btn-hero {
+    position: relative;
+    bottom: -5rem;
+}
+
+section#map-feature {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-areas: 
+        "large medium1"
+        "large medium2"
+    ;
+}
+
+section .map.large img {
+    max-width: 512px;
+}
+section .map.large {
+    font-size: 2.5rem;
+}
+section .map.medium img {
+    max-width: 256px;
+}
+section .map.medium {
+    font-size: 1.5rem;
+}
+
+section .map {
+    position: relative;
+    display: inline-block;
+}
+section .map a {
+    text-decoration: none;
+    display: inline;
+}
+section .map a:hover {
+    text-decoration: none;
+}
+section .map a h2 {
+    color: var(--poloroid-font-color);
+    opacity: 0.8;
+    transition: opacity 150ms;
+}
+section .map a:hover h2 {
+    opacity: 1;
+}
+section .map h2 {
+    font-family: var(--display-font-family);
+    text-shadow: 0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5);
+    display: inline-block;
+    position: absolute;
+}
+section .map h2.bottom-left {
+    left: 1.5em;
+    bottom: 0.5em;   
+}
+section .map h2.bottom-right {
+    right: 1.25em;
+    bottom: 0.5em;   
+}
+section .map h2.top-left {
+    left: 1.25em;
+    top: 0.5em;   
+}
+section .map h2.top-right {
+    right: 7.5em;
+    top: 0.5em;   
+}
+
+
+section {
+    margin-top: 5rem !important;
+    position: relative;
+}
+
+section h1 {
+    font-family: var(--display-font-family);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    display: block;
+    text-align: left;
+    padding: 1rem;
+    text-shadow: 0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5);
+    z-index: 2;
+}
+section h1::before{ 
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: inline;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    border-top: 1rem solid transparent;
+    border-left: 20rem solid var(--section-header-bg-color);
+    border-bottom: 1rem solid transparent;
+    transform: translate(-1rem, -0.5rem) rotate(-2deg) skew(-10deg, 3deg);
+}
+
+
+section > ul {
+    margin-top: -2rem;
+    background-color: var(--section-bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    box-shadow: 0px 0px 2rem 1rem rgba(0,0,0,0.5);
+    padding: 1rem;
+    padding-top: 4rem;
+}
+
+section > ul > figure {
+    width: 33.33333%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 115px auto;
+    grid-template-rows: 1.8rem auto auto;
+    grid-template-areas: 
+        "img title"
+        "img caption"
+        "img caption";
+}
+@media only screen and (max-width: 1080px) {
+    section > ul > figure { 
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 720px) {
+    section > ul > figure { 
+        width: 100%;
+    }
+}
+
+section > ul > figure > img {
+    grid-area: img;
+    border-radius: 0.25rem;
+    height: 115px;
+    width: 115px;
+    cursor: pointer;
+}
+section > ul > figure > h2 {
+    grid-area: title;
+    font-size: 1.5rem;
+    font-family: var(--secondary-display-font-family);
+}
+section > ul > figure > figcaption {
+    grid-area: caption;
+    font-size: 0.9rem;
+    opacity: 0.5;    
+
+}
+
+section#credits {
+    font-family: var(--secondary-display-font-family);
+}
+section#credits ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding: 3rem;
+}
+section#credits li {
+    width: 33.333333%;
+    font-size: 1.5rem;
+    padding: 1rem 0px;
+    margin: 0px;
+}
+@media only screen and (max-width: 1080px) {
+    section#credits li {
+        width: 50%;
+    }
+}
+
+
+hr {
+    border: 0px;
+    border-top: 0.15rem solid rgba(255,255,255,0.15)
+}
+
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "logo legal";
+    grid-column-gap: 1rem;
+}
+footer #tf2maps_logo {
+    grid-area: logo;
+    object-fit: cover;
+    width: 100%;
+}
+footer #tf2maps_logo img {
+    object-fit: cover;
+    width: 100%;
+    opacity: 0.85;
+    transition: opacity 100ms;
+}
+footer #tf2maps_logo:hover img {
+    opacity: 1;
+}
+
+
+footer #legal {
+    grid-area: legal;
+    width: 100%;
+    color: #86817e
+}
